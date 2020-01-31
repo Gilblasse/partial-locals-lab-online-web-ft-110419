@@ -1,0 +1,14 @@
+<%= form_tag students_path, method: :get do %>
+    <%= label_tag :query , "Search For A Student: " %>
+    <%= text_field_tag :query, params[:query] %>
+
+    <%= submit_tag 'search', name: nil %>
+<% end %>
+
+
+<ul>
+    <% @queried_students.each do |student| %>
+        <li>  <%= render 'student', student: student %>  </li><br>
+    <% end %>
+</ul>
+
